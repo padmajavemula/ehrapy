@@ -356,7 +356,7 @@ def _one_hot_encoding(
     """
     original_values = _initial_encoding(uns, categories)
     progress.update(task, description="[bold blue]Running one hot encoding on passed columns ...")
-    encoder = OneHotEncoder(handle_unknown="ignore", sparse=False).fit(original_values)
+    encoder = OneHotEncoder(handle_unknown="ignore", sparse_output=False).fit(original_values)
     categorical_prefixes = [
         f"ehrapycat_{category}_{str(suffix).strip()}"
         for idx, category in enumerate(categories)
